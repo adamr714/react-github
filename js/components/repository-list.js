@@ -10,6 +10,10 @@ export class RepositoryList extends React.Component {
         this.addRepository = this.addRepository.bind(this);
     }
 
+    componentDidMount() {
+        console.log('Repository List Mounted');
+    }
+
     addRepository() {
         const repositoryName = this.repositoryNameInput.value;
         this.props.dispatch(actions.addRepository(repositoryName));

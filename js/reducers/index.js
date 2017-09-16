@@ -11,6 +11,7 @@ export const repositoryReducer = (state=initialRepositoryState, action) => {
     }
     else if (action.type === actions.FETCH_DESCRIPTION_SUCCESS) {
         // Find the index of the matching repository
+        debugger;
         const index = state.findIndex(repository =>
             repository.name === action.repository
         );
@@ -27,6 +28,7 @@ export const repositoryReducer = (state=initialRepositoryState, action) => {
         return [...before, newRepository, ...after];
     }
     else if (action.type === actions.FETCH_DESCRIPTION_ERROR) {
+        debugger;
         // Find the index of the matching repository
         const index = state.findIndex(repository =>
             repository.name === action.repository

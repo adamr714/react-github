@@ -36,13 +36,15 @@ export const fetchDescription = repository => dispatch => {
         }
         return response;
     })
-    .then(response => response.json())
-    .then(data =>
-        dispatch(fetchDescriptionSuccess(repository, data.description))
-    )
-    .catch(error =>
-        dispatch(fetchDescriptionError(repository, error))
-    );
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        return dispatch(fetchDescriptionSuccess(repository, data.description))
+    })
+    .catch(error => {
+        return dispatch(fetchDescriptionError(repository, error))
+    });
 };
 
 
